@@ -1,0 +1,93 @@
+{
+  "success_cases": [
+    {
+      "image_path": "images/Bank_statement_1.jpg",
+      "is_url": false,
+      "expected": {
+        "num_boxes": 1,
+        "boxes": [
+          [40, 20, 565, 700]
+        ],
+        "margin": 5
+      }
+    },
+    {
+      "image_path": "images/Bank_statement_2.jpg",
+      "is_url": false,
+      "expected": {
+        "num_boxes": 1,
+        "boxes": [
+          [78, 275, 1190, 1455]
+        ],
+        "margin": 5
+      }
+    },
+    {
+      "image_path": "images/Invoice_1.jpg",
+      "is_url": false,
+      "expected": {
+        "num_boxes": 1,
+        "boxes": [
+          [890, 470, 3130, 3800]
+        ],
+        "margin": 5
+      }
+    },
+    {
+      "image_path": "images/Invoice_2.jpg",
+      "is_url": false,
+      "expected": {
+        "num_boxes": 1,
+        "boxes": [
+          [50, 815, 1800, 1580]
+        ],
+        "margin": 5
+      }
+    },
+    {
+      "image_path": "https://trulysmall.com/wp-content/uploads/2023/04/Contractor-Invoice-Template.png",
+      "is_url": true,
+      "expected": {
+        "num_boxes": 2,
+        "boxes": [
+          [415, 600, 625, 725],
+          [40, 295, 630, 500]
+        ],
+        "margin": 5
+      }
+    }
+  ],
+  "error_cases": [
+    {
+      "image_path": "images/no_table.jpg",
+      "is_url": false,
+      "expected": {
+        "table_found": false
+      }
+    },
+    {
+      "image_path": "images/empty.jpg",
+      "is_url": false,
+      "expected": {
+        "exception": "InvalidImageError",
+        "message": "The provided file is not a valid image."
+      }
+    },
+    {
+      "image_path": "https://invalid-url.com/image.jpg",
+      "is_url": true,
+      "expected": {
+        "exception": "ImageLoadError",
+        "message": "Failed to download image."
+      }
+    },
+    {
+      "image_path": "file_not_found.jpg",
+      "is_url": false,
+      "expected": {
+        "exception": "ImageLoadError",
+        "message": "Image file not found."
+      }
+    }
+  ]
+}
