@@ -71,6 +71,20 @@ def test_predict_without_image(detector):
         detector.predict()
 
 
+def test_predict_with_threshold_below_zero(detector):
+    """Check if calling predict with negative threshold raises the correct exception"""
+    detector.image_load(os.path.join(TEST_DIR, "images/Bank_statement_1.jpg"))
+    with pytest.raises(PredictionError, match="Threshold must be between 0 and 1."):
+        detector.predict(threshold=-0.1)
+
+
+def test_predict_with_threshold_above_one(detector):
+    """Check if calling predict with threshold above 1 raises the correct exception"""
+    detector.image_load(os.path.join(TEST_DIR, "images/Bank_statement_1.jpg"))
+    with pytest.raises(PredictionError, match="Threshold must be between 0 and 1."):
+        detector.predict(threshold=1.1)
+
+
 def test_print_results_without_image(detector):
     """Check if calling print_results() raises the correct exception if no image were loaded"""
 
