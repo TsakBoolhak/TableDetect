@@ -85,7 +85,7 @@ The following exceptions may be raised:
 - `ModelLoadError`: Raised if the model fails to load.
 - `ImageLoadError`: Raised if there are any issues loading an image (timeout, invalid path, invalid URL).
 - `InvalidImageError`: Raised in case the provided image is corrupted or in an unhandled format.
-- `PredictionError`: Raised in case of an error occuring during prediction.
+- `PredictionError`: Raised in case of an error occurring during prediction.
 
 ## Running Tests
 To run the tests for the project, simply use the following command:
@@ -101,7 +101,7 @@ The test suite covers both successful and error scenarios, including:
 ## Adding Tests
 
 To add new tests you just have to add a test case in the `config.json` file located in the `tests` directory.
-You also can eddit `test_table_detect.py` file in the same directory to add more specific tests
+You also can edit `test_table_detect.py` file in the same directory to add more specific tests
 
 Example of adding a test case in `config.json`:
 ```json
