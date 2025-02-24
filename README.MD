@@ -47,7 +47,7 @@ detector2 = TableDetect("path/to/alternative/model")
 detector.image_load("path_to_image.jpg")
 
 # Load an image from a URL
-detector.image_load("https//path/to/url.png")
+detector.image_load("https//path/to/url.png", is_url=True)
 
 # Perform table detection with the default threshold (only keeps results equal or above 90% confidence)
 # or set the desired threshold (value from 0 to 1)
